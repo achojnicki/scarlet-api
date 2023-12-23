@@ -1,0 +1,3 @@
+product_seo_name: 
+  required: True
+  allow_empty: False

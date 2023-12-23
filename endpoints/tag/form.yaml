@@ -1,0 +1,6 @@
+page:
+  required: false
+  allow_empty: false
+tag:
+  required: true
+  allow_empty: false
