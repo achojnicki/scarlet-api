@@ -5,7 +5,8 @@ from endpoints import (
     products,
     tag,
     category,
-    categories
+    categories,
+    delivery_addresses
     )
 
 class Endpoints(login.login,
@@ -15,7 +16,9 @@ class Endpoints(login.login,
     tag.tag,
     category.category,
     categories.categories,
+    delivery_addresses.delivery_addresses,
     ):
+
     def __init__(self, root):
         self._root=root
 

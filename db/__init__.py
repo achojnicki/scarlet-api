@@ -30,3 +30,5 @@ class DB(
         
         self.products=self._db['products']
         self.products_categories=self._db['products_categories']
+
+        self.user_addresses=self._db['addresses']
