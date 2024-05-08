@@ -6,7 +6,8 @@ from endpoints import (
     tag,
     category,
     categories,
-    delivery_addresses
+    delivery_addresses,
+    register
     )
 
 class Endpoints(login.login,
@@ -17,6 +18,7 @@ class Endpoints(login.login,
     category.category,
     categories.categories,
     delivery_addresses.delivery_addresses,
+    register.register
     ):
 
     def __init__(self, root):

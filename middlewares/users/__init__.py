@@ -1,3 +1,8 @@
+from exceptions import UserAlreadyExists, RecipmentDoNotMatchCriteria, PasswordDoNotMatchCriteria, AddressDoNotMatchCriteria
+
+SPECIAL_CHARACTERS=["!","@","#","$","%","^","&","*","(",")","_","+","-","=","{","}","[","]",":","|",";","'",'"',"\\","<",">","?",",",".","/","~","`","£","§","¬"]
+DIGITS=[]
+
 class Users:
 	def __init__(self, root):
 		self._root = root
@@ -6,7 +11,7 @@ class Users:
 		self.log = self._root.log
 		self.db = self._root.db
 
-	def get_users(self, page):
+	def get_users(self, page:int):
 		limit = self.config.api.results_per_page
 		skip = (int(page)-1)*limit
 
@@ -23,7 +28,7 @@ class Users:
 		self.log.success('Obtained users.')
 		return users
 
-	def get_user(self, user_uuid):
+	def get_user(self, user_uuid:str):
 		user=self.db.get_user_by_user_uuid(user_uuid)
 
 		del user['_id']
@@ -32,7 +37,7 @@ class Users:
 		self.log.success('Obtained user')
 		return user
 
-	def get_user_address(self, address_uuid):
+	def get_user_address(self, address_uuid:str):
 		address=self.db.get_user_address(
 			address_uuid=address_uuid
 			)
@@ -40,7 +45,7 @@ class Users:
 		self.log.success('Obtained user address')
 		return 
 
-	def get_user_addresses(self, user_uuid, page):
+	def get_user_addresses(self, user_uuid:str, page:int):
 		limit = self.config.api.results_per_page
 		skip = (int(page)-1)*limit
 
@@ -60,3 +65,22 @@ class Users:
 		self.log.success('Obtained user addresses')
 
 		return addresses
+
+	def create_user(
+		self,
+		user_uuid:str,
+		user_email:str,
+		user_password:str,
+		recipment:str,
+		address_first_line:str,
+		address_second_line:str,
+		town: str,
+		postcode: str,
+		group:str
+		):
+		pass
+
+
+
+
+

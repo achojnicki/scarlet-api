@@ -32,11 +32,12 @@ class users:
 
         return addresses
 
-    def create_user(self, user_uuid, user_email, password_hash):
+    def create_user(self, user_uuid, user_email, password_hash, group):
         document={
             "user_uuid": user_uuid,
             "user_email": user_email,
             "password_hash": password_hash,
+            "group": group
         }
 
         self.users.insert_one(document)

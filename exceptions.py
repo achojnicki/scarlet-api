@@ -21,3 +21,22 @@ class ValidationError(FormValidatorException):
 
 class FormNotDefined(FormValidatorException):
     pass
+
+
+#registration
+class RegistrationException(Exception):
+    pass
+
+class UserAlreadyExists(RegistrationException):
+    pass
+
+class RecipmentDoNotMatchCriteria(RegistrationException):
+    pass
+
+class PasswordDoNotMatchCriteria(RegistrationException):
+    pass
+
+class AddressDoNotMatchCriteria(RegistrationException):
+    pass
+
+
